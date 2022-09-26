@@ -3,12 +3,12 @@ include 'dbcon.php';
 session_start();
 if (isset($_SESSION['username'])) {
   if ($_SESSION['admin'] == 1)
-    header("location:./admindashboard.php");
+    header("location: ./admindashboard.php");
   else
-    header("location:./userdashboard.php");
+    header("location: ./userdashboard.php");
 }
 ?>
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 
 <head>
@@ -22,13 +22,10 @@ if (isset($_SESSION['username'])) {
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  
   <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
-  <style>
-  
-  </style>
-  
 </head>
 
 <body>
@@ -53,10 +50,6 @@ if (isset($_SESSION['username'])) {
   <div class="container h-50 outer">
     <div class="container h-100 w-50" id="main">
       <div class="d-flex align-items-center justify-content-center h-100 ">
-        <!-- <div class="d-flex flex-column">
-          <h2 id="hes">Welcome Employee</h2>
-          <img src="images/loginEmployee.png" class="img-fluid w-50" id="logo">
-        </div> -->
         <div class="d-flex flex-column w-100">
           <div class="container">
             <form action="" method="POST">
@@ -75,6 +68,10 @@ if (isset($_SESSION['username'])) {
               </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-primary" name="login">Submit</button>
+              </div>
+              <div id="g_id_onload" class="form-group" data-client_id="718737140980-kfofp00h0j35evj2cqib7gdjv6vpmit6.apps.googleusercontent.com" data-callback="onLogin" data-auto_prompt="false">
+              </div>
+              <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left">
               </div>
             </form>
           </div>
@@ -100,7 +97,6 @@ if (isset($_SESSION['username'])) {
         if ($row['is_hr']) {
           header("Location: ./admindashboard.php");
         } else {
-
           header("Location: ./userdashboard.php");
         }
       } else {
@@ -115,3 +111,30 @@ if (isset($_SESSION['username'])) {
 </body>
 
 </html>
+<script>
+    const parseJwt = (token) => {
+      try {
+        return JSON.parse(atob(token.split('.')[1]));
+      } catch (e) {
+        return null;
+      }
+    };
+
+    function onLogin(googleUser) {
+      console.log("inside");
+      const resp = parseJwt(googleUser.credential);
+      console.log(resp);
+      const emaill = resp.email;
+      var content = {
+        email: emaill
+      };
+      $.ajax({
+        url: "./googlelogin.php",
+        method: "post",
+        data: content,
+        success: function(data) {
+          window.location.assign(data);
+        }
+      });
+    }
+  </script>

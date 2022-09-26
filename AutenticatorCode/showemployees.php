@@ -83,7 +83,7 @@
             while($ro=$re->fetch_assoc())
             {
                 echo "<tr>";
-                echo "  <td><input type=radio id='sel_hr' value='".$ro['emp_id']."'></td>";
+                echo "  <td><input type=radio name='sel_hr' value='".$ro['emp_id']."'></td>";
                 echo    "<td>".$ro['first_name']."</td>";
                 echo    "<td>".$ro['middle_name']."</td>";
                 echo    "<td>".$ro['last_name']."</td>";

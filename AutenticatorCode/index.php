@@ -33,17 +33,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarsDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item  mr-4">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item  mr-4">
-            <a class="nav-link" href="#team">Team</a>
-          </li>
-          <li class="nav-item  mr-4">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
+       
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mr-4">
             <a class="nav-link" href="./login.php">Login</a>
@@ -60,8 +50,7 @@
       <ol class="carousel-indicators">
 
         <li data-target="#aboutcarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#aboutcarousel" data-slide-to="1"></li>
-        <li data-target="#aboutcarousel" data-slide-to="2"></li>
+        
 
       </ol>
 
@@ -73,32 +62,10 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum eveniet fugiat vel odio? Veritatis in, blanditiis cum voluptate tenetur voluptatem quidem totam est ipsam odit non assumenda mollitia quam voluptas!</p>
           </div>
         </div>
-        <div class="carousel-item">
-          <img class="d-block " src="images/3.jpg" alt="second">
-          <div class="carousel-caption d-md-block">
-            <h3>Lorem</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum eveniet fugiat vel odio? Veritatis in, blanditiis cum voluptate tenetur voluptatem quidem totam est ipsam odit non assumenda mollitia quam voluptas!</p>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img class="d-block " src="images/14.jpg" alt="third">
-          <div class="carousel-caption d-md-block">
-            <h3>Lorem</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum eveniet fugiat vel odio? Veritatis in, blanditiis cum voluptate tenetur voluptatem quidem totam est ipsam odit non assumenda mollitia quam voluptas!</p>
-          </div>
-        </div>
+        
       </div>
 
-      <a class="carousel-control-prev" href="#aboutcarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-
-      <a class="carousel-control-next" href="#aboutcarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+    
 
     </div>
   </section>
@@ -112,24 +79,7 @@
 
   </section>
 
-  <section id="team" data-aos="fade-up">
-    <div class="container">
-      <h3>Team</h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque necessitatibus pariatur adipisci magni exercitationem velit facilis autem obcaecati quas, ipsam debitis, beatae dolorem non ipsa eligendi laborum architecto officiis mollitia!</p>
-
-    </div>
-
-  </section>
-
-
-  <section id="contact" data-aos="fade-up">
-    <div class="container">
-      <h3>Contact</h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque necessitatibus pariatur adipisci magni exercitationem velit facilis autem obcaecati quas, ipsam debitis, beatae dolorem non ipsa eligendi laborum architecto officiis mollitia!</p>
-
-    </div>
-
-  </section>
+ 
 
 
 
