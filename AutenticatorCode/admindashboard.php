@@ -1,3 +1,31 @@
+<?php
+include 'dbcon.php';
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location:. /index.php");
+}
+if ($_SESSION['admin'] == 0) {
+    session_unset();
+    session_destroy();
+    header("Location: ./index.php");
+}
+?>
+<?php
+if (isset($_POST['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: ./index.php");
+}
+?>
+<?php
+$sql2 = "select * from login where emp_id='" . $_SESSION['username'] . "'";
+$result2 = $conn->query($sql2) or die($conn->error);
+$row2 = $result2->fetch_assoc();
+$sql = "select * from employee where emp_id='" . $_SESSION['username'] . "'";
+$res = $conn->query($sql) or die($conn->error);
+$row1 = $res->fetch_assoc();
+$curdep = $row1['dept_id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
