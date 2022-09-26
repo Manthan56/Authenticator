@@ -46,9 +46,6 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mr-4">
-            <a class="nav-link" href="./bosslogin.php">CEO Login</a>
-          </li>
-          <li class="nav-item mr-4">
             <a class="nav-link" href="./login.php">Login</a>
           </li>
         </ul>
